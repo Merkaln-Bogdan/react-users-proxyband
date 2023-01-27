@@ -9,7 +9,7 @@ import { usersDataService } from "services";
 const usePost = () => {
   const { userId } = useParams();
   const dispatch = useAppDispatch();
-  console.log(userId);
+
   const posts = useAppSelector(postsSelector.selectAll);
 
   useEffect(() => {

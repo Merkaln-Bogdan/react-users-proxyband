@@ -9,14 +9,17 @@ function Post(): React.ReactElement {
   return (
     <DefaultLayout title="Posts">
       <SG.List>
-        {posts &&
+        {!posts ? (
+          <Headline>Loading ...</Headline>
+        ) : (
           posts.map((post) => (
             <SG.ListItem key={post.id} isPosts>
               <Headline tag="h4">{post.title}</Headline>
 
               <Headline>{post.body}</Headline>
             </SG.ListItem>
-          ))}
+          ))
+        )}
       </SG.List>
     </DefaultLayout>
   );

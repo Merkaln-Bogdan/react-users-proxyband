@@ -8,12 +8,12 @@ type ButtonProps = {
   to?: string;
   type?: "button" | "submit";
   className?: string;
-  motive: "m1" | "m2";
+  motive: "posts" | "albums" | "close";
   children: React.ReactNode;
 };
 
 const defaultProps: Partial<ButtonProps> = {
-  motive: "m1",
+  motive: "posts",
   type: "button",
   className: undefined,
 };

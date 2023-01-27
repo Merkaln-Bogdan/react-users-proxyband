@@ -17,7 +17,7 @@ const useAlbums = () => {
       .getUserAlbums(userId!)
       .then((res) => dispatch(setAlbums(res.data)));
   }, [userId, dispatch]);
-  console.log(albums);
+
   return { albums };
 };
 

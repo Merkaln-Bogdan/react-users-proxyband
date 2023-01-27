@@ -1,22 +1,18 @@
 import { css } from "styled-components";
 
 const motives = {
-  m1: css`
-    padding: 2px 4px;
-    text-transform: uppercase;
-
-    font-weight: 300;
+  posts: css`
     border: 1px solid #363636;
     border-radius: 5px;
-    color: #363636;
+    background-color: #f5f3d7;
   `,
-  m2: css`
-    padding: 2px 4px;
-    text-transform: uppercase;
-
-    font-weight: 300;
-    border: 1px solid red;
-    background-color: red;
+  albums: css`
+    background-color: #197f7f;
+    border-radius: 5px;
+    color: #ffffff;
+  `,
+  close: css`
+    background-color: #999999;
     border-radius: 5px;
     color: #ffffff;
   `,

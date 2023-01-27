@@ -4,7 +4,6 @@ import { Button } from "components/Button";
 
 import { UserType } from "types/user.type";
 
-import * as SG from "global.styles";
 import * as S from "./Item.styles";
 
 type ItemProps = {
@@ -17,18 +16,18 @@ function ListItem(props: ItemProps): React.ReactElement {
   } = { ...props };
   const navigate = useNavigate();
   return (
-    <SG.ListItem key={id} isPosts>
+    <S.Item key={id} isPosts>
       {name}
       <S.Wrapper>
         <Button
-          motive="m1"
+          motive="posts"
           // we can use navigate from useNavigate
           onClick={() => navigate(`/${id}/posts`)}
         >
           Posts
         </Button>
         <Button
-          motive="m2"
+          motive="albums"
           // or we can use button as link
           asLink
           to={`/${id}/albums`}
@@ -36,7 +35,7 @@ function ListItem(props: ItemProps): React.ReactElement {
           Albums
         </Button>
       </S.Wrapper>
-    </SG.ListItem>
+    </S.Item>
   );
 }
 

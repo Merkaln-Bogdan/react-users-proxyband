@@ -14,6 +14,8 @@ root.render(
     <Provider store={store}>
       <BrowserRouter>
         <App />
+
+        <div id="portalContext" />
       </BrowserRouter>
     </Provider>
   </React.StrictMode>

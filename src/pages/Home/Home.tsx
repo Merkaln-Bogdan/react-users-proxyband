@@ -10,7 +10,7 @@ function Home(): React.ReactElement {
   const { users } = useHome();
 
   return (
-    <DefaultLayout>
+    <DefaultLayout title="All users">
       <S.Container>
         {!users ? (
           <>Loading...</>

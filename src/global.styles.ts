@@ -8,6 +8,8 @@ const List = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  padding: 20px;
 `;
 
 const ListItem = styled.li<GlobalStyledProps>`
