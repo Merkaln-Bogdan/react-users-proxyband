@@ -9,6 +9,7 @@ import { Home } from "./pages/Home";
 import { routes } from "./data/routes";
 import { usersDataService } from "services";
 import { setUsers } from "redux/slices/user.slice";
+import { Albums } from "pages/Albums";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -22,7 +23,8 @@ function App() {
       <Route path="/" element={<Navigate to={routes.home} />} />
       <Route index path="/" element={<Home />} />
 
-      <Route path="post/:postId" element={<Post />} />
+      <Route path="/:userId/posts" element={<Post />} />
+      <Route path="/:userId/albums" element={<Albums />} />
     </Routes>
   );
 }

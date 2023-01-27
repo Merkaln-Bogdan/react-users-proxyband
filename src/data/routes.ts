@@ -1,4 +1,5 @@
 export const routes = {
   home: "/",
-  post: ":/postId",
+  post: "/:userId/posts",
+  albums: "/:userId/albums",
 };
