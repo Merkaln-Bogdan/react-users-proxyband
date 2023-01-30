@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useAppDispatch } from "redux/redux.hooks";
 
 import { Post } from "./pages/Post";
@@ -20,11 +20,11 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Navigate to={routes.home} />} />
-      <Route index path="/" element={<Home />} />
+      <Route index path={routes.home} element={<Home />} />
 
-      <Route path="/:userId/posts" element={<Post />} />
-      <Route path="/:userId/albums" element={<Albums />} />
+      <Route path={routes.post} element={<Post />} />
+
+      <Route path={routes.albums} element={<Albums />} />
     </Routes>
   );
 }

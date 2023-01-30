@@ -31,6 +31,7 @@ function ListItem(props: ItemProps): React.ReactElement {
           // or we can use button as link
           asLink
           to={`/${id}/albums`}
+          // or we can set open modal window
         >
           Albums
         </Button>
