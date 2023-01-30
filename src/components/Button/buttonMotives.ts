@@ -2,6 +2,8 @@ import { css } from "styled-components";
 
 const motives = {
   posts: css`
+    margin-right: 10px;
+
     border: 1px solid #363636;
     border-radius: 5px;
     background-color: #f5f3d7;
