@@ -5,6 +5,9 @@ import { Button } from "components/Button";
 import { UserType } from "types/user.type";
 
 import * as S from "./Item.styles";
+// import { ReactModal } from "components/ReactModal";
+// import { useState } from "react";
+// import { Albums } from "pages/Albums";
 
 type ItemProps = {
   data: UserType;
@@ -14,7 +17,9 @@ function ListItem(props: ItemProps): React.ReactElement {
   const {
     data: { id, name },
   } = { ...props };
+  // const [isVisibleModal, setIsVisibleModal] = useState(false);
   const navigate = useNavigate();
+
   return (
     <S.Item key={id} isPosts>
       {name}
@@ -32,10 +37,20 @@ function ListItem(props: ItemProps): React.ReactElement {
           asLink
           to={`/${id}/albums`}
           // or we can set open modal window
+
+          // onClick={() => setIsVisibleModal(true)}
         >
           Albums
         </Button>
       </S.Wrapper>
+
+      {/* <ReactModal
+        isOpen={isVisibleModal}
+        closeModal={() => setIsVisibleModal(false)}
+      >
+        
+        <Albums id={id} />
+      </ReactModal> */}
     </S.Item>
   );
 }

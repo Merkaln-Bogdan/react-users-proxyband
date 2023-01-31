@@ -1,5 +1,3 @@
-import React from "react";
-
 import Modal from "react-modal";
 
 const customStyles = {
@@ -13,38 +11,23 @@ const customStyles = {
   },
 };
 
-Modal.setAppElement("#yourAppElement");
+Modal.setAppElement("#root");
 
-const ReactModal = (): React.ReactElement => {
-  let subtitle: { style: { color: string } };
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+type ModalProps = {
+  isOpen: boolean;
+  closeModal: () => void;
+  children: React.ReactNode;
+};
 
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = "#f00";
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
+const ReactModal = (props: ModalProps): React.ReactElement => {
+  const { isOpen, children, closeModal } = { ...props };
 
   return (
-    <div>
-      <button onClick={openModal}>Open Modal</button>
-      <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
-      >
-        <button onClick={closeModal}>close</button>
-      </Modal>
-    </div>
+    <Modal isOpen={isOpen} onRequestClose={closeModal} style={customStyles}>
+      <button onClick={closeModal}>close</button>
+      {children}
+    </Modal>
   );
 };
+
 export { ReactModal };

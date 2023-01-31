@@ -6,6 +6,7 @@ const ListModal = styled(List)`
   padding: 0 25px;
 
   @media (max-width: 540px) {
+    width: 270px;
     padding: 0;
   }
 `;
